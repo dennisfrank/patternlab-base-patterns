@@ -1,0 +1,78 @@
+<{{# element }}{{ element }}{{/ element }}{{^ element }}div{{/ element }} class="c-block{{# media }}  c-block--media{{# media-right}}-right{{/ media-right }}{{# media-break }}  c-block--media-break@{{ media-break-at }}{{/ media-break }}{{/ media }}{{# flag }}  c-block--flag{{# flag-break }}  c-block--media-break@{{ flag-break-at }}{{/ flag-break }}{{/ flag }}  {{ class }}">
+  {{# has-fulllink }}<a href="{{ url }}">{{/ has-fulllink }}
+  {{# has-byline }}
+    <div class="c-block__byline">
+      {{# has-custom-byline }}
+        {{ byline }}
+      {{/ has-custom-byline }}
+      {{^ has-custom-byline }}
+      <ul class="c-meta">
+        <li class="c-meta__intro">{{ headline.xs }}</li>
+        <li>{{ headline.xs }}</li>
+        <li>{{ headline.xs }}</li>
+      </ul>
+      {{/ has-custom-byline }}
+    </div>
+  {{/ has-byline }}
+  {{# has-image }}
+    {{# has-link }}<a href="{{ url }}">{{/ has-link }}
+    <figure class="c-block__image  {{ image-class }}">
+      {{# has-svg }}
+      <span class="c-svg  {{ svg-class }}">
+        <svg>
+          <use xlink:href="{{ svg.defs }}#{{ svg.symbol }}"></use>
+        </svg>
+      </span>
+      {{/ has-svg }}
+      {{^ has-svg }}
+      <img src="{{ img.landscape-4x3.src }}" alt="{{ img.landscape-4x3.alt }}">
+      {{/ has-svg }}
+      {{# has-banner }}
+        <figcaption class="c-block__banner">{{ headline.short }}</figcaption>
+      {{/ has-banner }}
+      {{# has-figcaption }}
+        <figcaption class="c-block__figcaption">{{ headline.short }}</figcaption>
+      {{/ has-figcaption }}
+    </figure>
+    {{# has-link }}</a>{{/ has-link }}
+  {{/ has-image }}
+  {{# has-image-placeholder }}
+    {{# has-link }}<a href="{{ url }}">{{/ has-link }}
+    <figure class="c-block__image  c-image-placeholder  o-ratio-box  u-ratio-4/3  {{ image-class }}">
+      <div>{{ headline.short }}</div>
+      {{# has-banner }}
+        <figcaption class="c-block__banner">{{ headline.short }}</figcaption>
+      {{/ has-banner }}
+    </figure>
+    {{# has-link }}</a>{{/ has-link }}
+  {{/ has-image-placeholder }}
+  <div class="c-block__body  {{ body-class }}">
+    {{# has-heading }}
+    <h3 class="{{# has-heading-class }}{{ heading-class }}{{/ has-heading-class }}{{^ has-heading-class }}c-heading--gamma{{/ has-heading-class }}">
+      {{# has-link }}<a href="{{ url }}">{{/ has-link }}
+        {{ headline.short }}
+      {{# has-link }}</a>{{/ has-link }}
+    </h3>
+    {{/ has-heading }}
+    {{# has-excerpt }}
+    <div class="c-block__excerpt  {{ excerpt-class }}">
+      {{# has-meta }}
+        <ul class="c-meta  {{ meta-class }}">
+          {{ meta }}
+        </ul>
+      {{/ has-meta }}
+      {{ excerpt.short }}
+    </div>
+    {{/ has-excerpt }}
+    {{# has-more-link }}
+      {{# has-link }}
+    <a class="c-link--more" href="{{ url }}">{{ text.more }}</a>
+      {{/ has-link }}
+      {{# has-fulllink }}
+    <span class="c-link--more  u-link">{{ text.more }}</span>
+      {{/ has-fulllink }}
+    {{/ has-more-link }}
+
+  </div>
+  {{# has-fulllink }}</a>{{/ has-fulllink }}
+</{{# element }}{{ element }}{{/ element }}{{^ element }}div{{/ element }}>

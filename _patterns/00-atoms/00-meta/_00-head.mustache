@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html class="no-js  {{ htmlClass }}" lang="{{ lang }}">
+	<head>
+		<title>{{ title }}</title>
+		<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../assets/css/app.css?{{ cacheBuster }}">
+    <link rel="stylesheet" href="../../assets/css/styleguide.css?{{ cacheBuster }}">
+		<!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+		{% pattern-lab-head %}
+		<!-- End Pattern Lab -->
+
+    <!--[if lt IE 9]>
+        <script src="../../assets/js/standalone/html5shiv.js"></script>
+        <script src="../../assets/js/standalone/html5shiv-printshiv.js"></script>
+    <![endif]-->
+
+    <script src="https://use.typekit.net/mfl0emv.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <script>
+      document.documentElement.className =
+         document.documentElement.className.replace("no-js","js");
+    </script>
+
+	</head>
+  {{# isPage }}
+  <body>
+  {{/ isPage }}
+  {{^ isPage }}
+  <body class="sg-main">
+  {{/ isPage }}
