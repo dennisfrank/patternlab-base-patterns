@@ -1,0 +1,5 @@
+# Ignore OS generated files
+.DS_Store
+
+# Do not ignore .gitkeep in ignored directories
+!.gitkeep
